@@ -1,0 +1,249 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+<section>
+  <div class="container pt-5">
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row align-items-center justify-content-between mb-1">
+          <div class="col-4 col-sm-auto d-flex align-items-center pr-0">
+            <h6 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">System Users</h6>
+          </div>
+          <div class="col-8 col-sm-auto ml-auto text-align-end pl-0">
+            <button class="btn btn-options btn-sm mx-2 float-end" type="button" data-bs-toggle="modal" data-bs-target="#filtersModal">
+              <span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span>
+              <span class="d-none d-sm-inline-block ml-1">Filter</span>
+            </button>
+            <button class="btn btn-options btn-sm mx-2 float-end" type="button" data-bs-toggle="modal" data-bs-target="#addUserModal">
+              <span class="bi bi-person-plus-fill" data-fa-transform="shrink-3 down-2"></span>
+              <span class="d-none d-sm-inline-block ml-1">Add User</span>
+            </button>
+          </div>
+        </div>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        {% if users.total == 0: %}
+        <p>No Data Available</p>
+      </div>
+      {% else: %}
+      </div>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Last Login</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users.items %}
+            <tr>
+              <td>
+                {{ user.name }} <br>
+                <small> <strong>{{ user.email }}</strong> </small>
+              </td>
+              <td>
+                {{ user.employer.name }} <br>
+                <small> <strong>{{ user.role }}</strong> </small>
+              </td>
+              <td>
+                {% if user.last_login == None: %}
+                  <strong> - </strong>
+                {% else: %}
+                  {{ user.last_login.strftime("%a %d %b [ %H:%M ]") }}
+                {% endif %}
+              </td>
+              <td>
+                <a data-bs-toggle="offcanvas" href="#usersOffcanvas" role="button" aria-controls="usersOffcanvas" data-bs-UserId="{{user.id}}" data-bs-UserName="{{user.name}}" data-bs-UserEmail="{{user.email}}" data-bs-UserRole="{{user.role}}" data-bs-UserEmployer="{{user.employer.name}}" data-bs-UserLogin='{{user.last_login}}'>
+                  <i class="bi bi-three-dots"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center my-3">
+        <button class="btn btn-options btn-sm {% if users.page == 1 %}disabled{% endif %}" type="button">
+          <a class="bi bi-chevron-left" href="{{ url_for('user.users', page=users.prev_num) }}"></a>
+        </button>
+        {% for page_num in users.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+          {% if page_num %}
+            {% if users.page == page_num %}
+              <button class="btn btn-options btn-sm active" type="button">
+                <a class="px-1 ml-1" href="{{ url_for('user.users', page=page_num) }}"> {{ page_num }} </a>
+              </button>
+            {% else %}
+            <button class="btn btn-options btn-sm" type="button">
+              <a class="px-1 ml-1" href="{{ url_for('user.users', page=page_num) }}"> {{ page_num }}</a>
+            </button>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <button class="btn btn-options btn-sm {% if users.page == users.pages %}disabled{% endif %}" type="button">
+          <a class="bi bi-chevron-right" href="{{ url_for('user.users', page=users.next_num) }}"></a>
+        </button>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addUserModalLabel">Add User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="" method="post">
+          <div class="modal-body">
+            <p>Fill in the form below to create a new user.</p>
+              {{ form.hidden_tag() }}
+
+              <!-- Name field start-->
+              <div class="form-floating mb-3">
+                {% if form.name.errors %}
+                  {{ form.name(class="form-control is-invalid", id="name", type="text", placeholder="Name") }}
+                  <div class="input-feedback">{% for error in form.name.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                {% else %}
+                  {{ form.name(class="form-control", id="name", type="text", placeholder="Name") }}
+                {% endif %}
+                <label for="name">Name</label>
+              </div>
+              <!-- Name field end-->
+
+              <!-- Email form start-->
+              <div class="form-floating mb-3">
+                {% if form.email.errors %}
+                  {{ form.email(class="form-control is-invalid", id="email", type="email", placeholder="Email") }}
+                  <div class="input-feedback">{% for error in form.email.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                {% else %}
+                  {{ form.email(class="form-control", id="email", type="email", placeholder="Email") }}
+                {% endif %}
+                <label for="email">Email</label>
+              </div>
+              <!-- Email form end-->
+
+              <!-- Role form start-->
+              <div class="form-floating mb-3">
+                {% if form.role.errors %}
+                  {{ form.role(class="form-control is-invalid", id="role", placeholder="Role") }}
+                  <div class="input-feedback">{% for error in form.role.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                {% else %}
+                  {{ form.role(class="form-control", id="role", placeholder="Role") }}
+                {% endif %}
+                <label for="role">Role</label>
+              </div>
+              <!-- Role form end-->
+
+              <!-- Status form start-->
+              <div class="form-floating mb-3">
+                {% if form.status.errors %}
+                  {{ form.status(class="form-control is-invalid", id="status", placeholder="Status") }}
+                  <div class="input-feedback">{% for error in form.status.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                {% else %}
+                  {{ form.status(class="form-control", id="status", placeholder="Status") }}
+                {% endif %}
+                <label for="status">Status</label>
+              </div>
+              <!-- Status form end-->
+
+              <!-- Company form start-->
+              <div class="form-floating mb-3">
+                {% if form.company.errors %}
+                  {{ form.company(class="form-control is-invalid", id="company", placeholder="Company") }}
+                  <div class="input-feedback">{% for error in form.company.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                {% else %}
+                  {{ form.company(class="form-control", id="company", placeholder="Company") }}
+                {% endif %}
+                <label for="company">Company</label>
+              </div>
+              <!-- Company form end-->
+
+          </div>
+          <div class="modal-footer">
+            <!-- Submit button start -->
+              {{ form.submit(class="btn green") }}
+              <!-- Submit button end -->
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters Modal -->
+    <div class="modal fade" id="filtersModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="filtersModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="filtersModalLabel">Filters</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Table filters go here.</p>
+            <form action="" method="post">
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn green">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="usersOffcanvas" aria-labelledby="usersOffcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="usersOffcanvasLabel"></h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+
+        <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
+            <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+              <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+              <span class="fs-5 fw-semibold">User Information</span>
+            </a>
+            <div class="list-group list-group-flush border-bottom scrollarea">
+
+              <a href="#" class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <strong class="mb-1">Name:</strong>
+                </div>
+                <div class="col-10 mb-1 small" id="userName"></div>
+              </a>
+
+              <a href="#" class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <strong class="mb-1">Email:</strong>
+                </div>
+                <div class="col-10 mb-1 small" id="userEmail"></div>
+              </a>
+
+              <a href="#" class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <strong class="mb-1">Company:</strong>
+                </div>
+                <div class="col-10 mb-1 small">
+                  <span id="userRole"></span> @ <span id="userEmployer"></span>
+                </div>
+              </a>
+
+              <a href="#" class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <strong class="mb-1">Last Logged in:</strong>
+                </div>
+                <div class="col-10 mb-1 small" id="userLogin"></div>
+              </a>
+
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock content %}

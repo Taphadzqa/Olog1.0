@@ -1,0 +1,15 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row align-items-center pt-5">
+      <!-- One -->
+      <div class="mt-5 text-center pt-md-5">
+        <h1 class="display-1 fw-bold mb-3">Sorry, you do not have permission to do that</h1>
+        <p class="fs-4">Please check your account and try again.</p>
+        <a class="btn orange btn-lg px-4 me-sm-3" href="{{ url_for('user.signin') }}">Take me home</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

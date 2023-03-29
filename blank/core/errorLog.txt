@@ -1,0 +1,772 @@
+Exception on /signin [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 27, in signin
+    if user and bcrypt.check_password_hash(user.password, form.password.data):
+  File "/usr/lib/python3.8/site-packages/flask_bcrypt.py", line 193, in check_password_hash
+    return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
+ValueError: Invalid salt
+Exception on /signin [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 27, in signin
+    if user and bcrypt.check_password_hash(user.password, form.password.data):
+  File "/usr/lib/python3.8/site-packages/flask_bcrypt.py", line 193, in check_password_hash
+    return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
+ValueError: Invalid salt
+Exception on /signin [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 27, in signin
+    if user and bcrypt.check_password_hash(user.password, form.password.data):
+  File "/usr/lib/python3.8/site-packages/flask_bcrypt.py", line 193, in check_password_hash
+    return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
+ValueError: Invalid salt
+Exception on /signin [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 27, in signin
+    if user and bcrypt.check_password_hash(user.password, form.password.data):
+  File "/usr/lib/python3.8/site-packages/flask_bcrypt.py", line 193, in check_password_hash
+    return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
+ValueError: Invalid salt
+Exception on /signin [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 27, in signin
+    if user and bcrypt.check_password_hash(user.password, form.password.data):
+  File "/usr/lib/python3.8/site-packages/flask_bcrypt.py", line 193, in check_password_hash
+    return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
+ValueError: Invalid salt
+Exception on /signin [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 27, in signin
+    if user and bcrypt.check_password_hash(user.password, form.password.data):
+  File "/usr/lib/python3.8/site-packages/flask_bcrypt.py", line 193, in check_password_hash
+    return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
+ValueError: Invalid salt
+Exception on /loads/cancel_booking/8891 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 155, in cancel_booking
+    Load().cancelBooking(id)
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 166, in cancelBooking
+    if (data['records'][0]['field_294']):
+TypeError: 'NoneType' object is not subscriptable
+Exception on /loads/cancel_booking/8715 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 155, in cancel_booking
+    Load().cancelBooking(id)
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 166, in cancelBooking
+    if (data['records'][0]['field_294']):
+TypeError: 'NoneType' object is not subscriptable
+Exception on /loads/cancel_booking/8715 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 155, in cancel_booking
+    Load().cancelBooking(id)
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 166, in cancelBooking
+    if (data['records'][0]['field_294']):
+TypeError: 'NoneType' object is not subscriptable
+Exception on /loads/cancel_booking/8891 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 155, in cancel_booking
+    Load().cancelBooking(id)
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 166, in cancelBooking
+    if (data['records'][0]['field_294']):
+TypeError: 'NoneType' object is not subscriptable
+Exception on /loads [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 54, in loads
+    data = {'pickup': request.args.get('pickup', 'Pickup'), 'drop': request.args.get('drop', None), 'loading_date': loading_date, 'category': current_user.employer.haulier.category}
+AttributeError: 'NoneType' object has no attribute 'category'
+Exception on /loads [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 54, in loads
+    data = {'pickup': request.args.get('pickup', 'Pickup'), 'drop': request.args.get('drop', None), 'loading_date': loading_date, 'category': current_user.employer.haulier.category}
+AttributeError: 'NoneType' object has no attribute 'category'
+Exception on /loads/unassigned [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 100, in unassigned_loads
+    loads = Load().getUnassignedLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 98, in getUnassignedLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.offload_date >= date.today(), LoadData.knack_load_status == "ACTIVE", LoadData.vehicle_registration == "" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads/active [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 130, in active_loads
+    loads = Load().getActiveLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 106, in getActiveLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.offload_date >= date.today(), LoadData.knack_load_status == "ACTIVE", LoadData.vehicle_registration != "" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads/completed [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 140, in completed_loads
+    loads = Load().getCompletedLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 114, in getCompletedLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.knack_load_status == "COMPLETE" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads/active [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 130, in active_loads
+    loads = Load().getActiveLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 106, in getActiveLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.offload_date >= date.today(), LoadData.knack_load_status == "ACTIVE", LoadData.vehicle_registration != "" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads/completed [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 140, in completed_loads
+    loads = Load().getCompletedLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 114, in getCompletedLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.knack_load_status == "COMPLETE" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads/completed [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 140, in completed_loads
+    loads = Load().getCompletedLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 114, in getCompletedLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.knack_load_status == "COMPLETE" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads/unassigned [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 100, in unassigned_loads
+    loads = Load().getUnassignedLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 98, in getUnassignedLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.offload_date >= date.today(), LoadData.knack_load_status == "ACTIVE", LoadData.vehicle_registration == "" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 54, in loads
+    data = {'pickup': request.args.get('pickup', 'Pickup'), 'drop': request.args.get('drop', None), 'loading_date': loading_date, 'category': current_user.employer.haulier.category}
+AttributeError: 'NoneType' object has no attribute 'category'
+Exception on /loads [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 54, in loads
+    data = {'pickup': request.args.get('pickup', 'Pickup'), 'drop': request.args.get('drop', None), 'loading_date': loading_date, 'category': current_user.employer.haulier.category}
+AttributeError: 'NoneType' object has no attribute 'category'
+Exception on /loads [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 54, in loads
+    data = {'pickup': request.args.get('pickup', 'Pickup'), 'drop': request.args.get('drop', None), 'loading_date': loading_date, 'category': current_user.employer.haulier.category}
+AttributeError: 'NoneType' object has no attribute 'category'
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2275, in _wrap_pool_connect
+    return fn()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 760, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 497, in checkout
+    rec._checkin_failed(err)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 494, in checkout
+    dbapi_connection = rec.get_connection()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 621, in get_connection
+    self.__connect()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 639, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 481, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/lib/python3.8/site-packages/MySQLdb/__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/lib/python3.8/site-packages/MySQLdb/connections.py", line 166, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2003, "Can't connect to MySQL server on 'Taphadzqa.mysql.pythonanywhere-services.com' (110)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 14, in home
+    return render_template('main/home.html', title='Welcome')
+  File "/usr/lib/python3.8/site-packages/flask/templating.py", line 136, in render_template
+    ctx.app.update_template_context(context)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 838, in update_template_context
+    context.update(func())
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 368, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "/usr/lib/python3.8/site-packages/flask_login/login_manager.py", line 353, in _load_user
+    return self._load_from_cookie(request.cookies[cookie_name])
+  File "/usr/lib/python3.8/site-packages/flask_login/login_manager.py", line 392, in _load_from_cookie
+    self.reload_user()
+  File "/usr/lib/python3.8/site-packages/flask_login/login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "/home/Taphadzqa/Blank/blank/core/models.py", line 10, in load_user
+    return User.query.get(int(user_id))
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 1069, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/loading.py", line 282, in load_on_pk_identity
+    return q.one()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3300, in one
+    ret = self.one_or_none()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3269, in one_or_none
+    ret = list(self)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3342, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3363, in _execute_and_instances
+    conn = self._get_bind_args(
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3378, in _get_bind_args
+    return fn(
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3357, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1121, in connection
+    return self._connection_for_bind(
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1129, in _connection_for_bind
+    return self.transaction._connection_for_bind(
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 431, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2239, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2278, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1544, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2275, in _wrap_pool_connect
+    return fn()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 760, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 497, in checkout
+    rec._checkin_failed(err)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 494, in checkout
+    dbapi_connection = rec.get_connection()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 621, in get_connection
+    self.__connect()
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 639, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 481, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/lib/python3.8/site-packages/MySQLdb/__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/lib/python3.8/site-packages/MySQLdb/connections.py", line 166, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2003, "Can't connect to MySQL server on 'Taphadzqa.mysql.pythonanywhere-services.com' (110)")
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Exception on /loads [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 54, in loads
+    data = {'pickup': request.args.get('pickup', 'Pickup'), 'drop': request.args.get('drop', None), 'loading_date': loading_date, 'category': current_user.employer.haulier.category}
+AttributeError: 'NoneType' object has no attribute 'category'
+Exception on /loads [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 54, in loads
+    data = {'pickup': request.args.get('pickup', 'Pickup'), 'drop': request.args.get('drop', None), 'loading_date': loading_date, 'category': current_user.employer.haulier.category}
+AttributeError: 'NoneType' object has no attribute 'category'
+Exception on /loads/active [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 130, in active_loads
+    loads = Load().getActiveLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 106, in getActiveLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.offload_date >= date.today(), LoadData.knack_load_status == "ACTIVE", LoadData.vehicle_registration != "" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads/completed [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 140, in completed_loads
+    loads = Load().getCompletedLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 114, in getCompletedLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.knack_load_status == "COMPLETE" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads/completed [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 140, in completed_loads
+    loads = Load().getCompletedLoads()
+  File "/home/Taphadzqa/Blank/blank/routes/classes/load.py", line 114, in getCompletedLoads
+    loads = LoadData.query.filter(and_(LoadData.transporter == current_user.employer.haulier.knack_id, LoadData.knack_load_status == "COMPLETE" )).order_by(LoadData.load_date).all()
+AttributeError: 'NoneType' object has no attribute 'knack_id'
+Exception on /loads [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.8/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Taphadzqa/Blank/blank/routes/routes.py", line 54, in loads
+    data = {'pickup': request.args.get('pickup', 'Pickup'), 'drop': request.args.get('drop', None), 'loading_date': loading_date, 'category': current_user.employer.haulier.category}
+AttributeError: 'NoneType' object has no attribute 'category'
+Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 56, in reset_request
+    sendResetEmail(user)
+  File "/home/Taphadzqa/Blank/blank/routes/user/utils.py", line 21, in sendResetEmail
+    server.login(username, password)
+  File "/usr/lib/python3.8/smtplib.py", line 734, in login
+    raise last_exception
+  File "/usr/lib/python3.8/smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.8/smtplib.py", line 646, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'Incorrect authentication data')
+Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 56, in reset_request
+    sendResetEmail(user)
+  File "/home/Taphadzqa/Blank/blank/routes/user/utils.py", line 18, in sendResetEmail
+    server = smtplib.SMTP_SSL(smtp, 465)
+  File "/usr/lib/python3.8/smtplib.py", line 1034, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/usr/lib/python3.8/smtplib.py", line 253, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python3.8/smtplib.py", line 1040, in _get_socket
+    new_socket = socket.create_connection((host, port), timeout,
+  File "/usr/lib/python3.8/socket.py", line 787, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.8/socket.py", line 914, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/Taphadzqa/Blank/blank/routes/user/routes.py", line 56, in reset_request
+    sendResetEmail(user)
+  File "/home/Taphadzqa/Blank/blank/routes/user/utils.py", line 18, in sendResetEmail
+    server = smtplib.SMTP_SSL(smtp, 465)
+  File "/usr/lib/python3.8/smtplib.py", line 1034, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/usr/lib/python3.8/smtplib.py", line 253, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python3.8/smtplib.py", line 1040, in _get_socket
+    new_socket = socket.create_connection((host, port), timeout,
+  File "/usr/lib/python3.8/socket.py", line 787, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.8/socket.py", line 914, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution

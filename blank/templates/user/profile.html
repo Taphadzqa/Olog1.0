@@ -1,0 +1,60 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row pt-lg-5">
+      <!-- One -->
+      <div class="col-lg-5 mt-5">
+        <div class="card avatar tilt"></div>
+      </div>
+      <!-- Two -->
+      <div class="col-lg-7 mt-5 text-dark mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="display-2">{{ current_user.name }}</h1>
+            <h4 class="mb-3">{{ current_user.email }}</h4>
+            <h6 class="mb-5">{{ current_user.employer.name }} | {{ current_user.role }}</h6>
+            <h6 class="card-title">Change Password</h6>
+            <form action="" method="post">
+              {{ form.hidden_tag() }}
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- Password form start-->
+                  <div class="form-floating mb-3">
+                    {% if form.password.errors %}
+                    {{ form.password(class="form-control is-invalid", id="password", type="password", placeholder="Password") }}
+                    <div class="input-feedback">{% for error in form.password.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                    {% else %}
+                    {{ form.password(class="form-control", id="password", type="password", placeholder="Password") }}
+                    {% endif %}
+                    <label for="password">Password</label>
+                  </div>
+                  <!-- Password form end-->
+                </div>
+                <div class="col-md-6">
+                  <!-- Confirm Password form start-->
+                  <div class="form-floating mb-3">
+                    {% if form.confirm_password.errors %}
+                    {{ form.confirm_password(class="form-control is-invalid", id="confirm_password", type="password", placeholder="Confirm password") }}
+                    <div class="input-feedback">{% for error in form.confirm_password.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                    {% else %}
+                    {{ form.confirm_password(class="form-control", id="confirm_password", type="password", placeholder="Confirm password") }}
+                    {% endif %}
+                    <label for="confirm_password">Confirm password</label>
+                  </div>
+                  <!-- Confirm Password form end-->
+                </div>
+              </div>
+
+              <!-- Submit button start -->
+              {{ form.submit(class="btn orange") }}
+              <!-- Submit button end -->
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

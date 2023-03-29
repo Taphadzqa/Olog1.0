@@ -1,0 +1,55 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('main.home') }}"> <img src="{{ url_for('static', filename='css/img/logo.svg') }}" alt="Olog"> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="container">
+          <ul class="navbar-nav">
+            {% if current_user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link {% if request.url_rule.endpoint == 'main.home' %}active{% endif %}" aria-current="page" href="{{ url_for('main.home') }}">Home</a></li>
+              <li class="nav-item"><a class="nav-link {% if request.url_rule.endpoint == 'main.browse' %}active{% endif %}" href="{{ url_for('main.browse') }}">Search for loads</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {% if request.url_rule.endpoint == 'main.unassigned_loads' %}active{% endif %}" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">My loads</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="{{ url_for('main.unassigned_loads') }}">Unassigned loads</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('main.active_loads') }}">Active loads</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('main.completed_loads') }}">Completed loads</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link {% if request.url_rule.endpoint == 'main.reports' %}active{% endif %}" href="{{ url_for('main.reports') }}">Reports</a></li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('main.shipper') }}">Shipper</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('main.carrier') }}">Carrier</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        <ul class="navbar-nav me-auto">
+          {% if current_user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ current_user.name }}</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="{{ url_for('user.profile') }}">Profile</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('user.profile') }}">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ url_for('user.signout') }}">Sign out</a></li>
+              </ul>
+            </li>
+          {% else %}
+            {% if request.url_rule.endpoint == "main.home" %}
+              <li class="nav-item"><a class="nav-link ms-lg-5 active" href="{{ url_for('user.signin') }}">Sign in</a></li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('main.home') }}">Home page</a></li>
+            {% endif %}
+          {% endif %}
+        </ul>
+      </div>
+
+
+    </div>
+  </nav>
+</header>

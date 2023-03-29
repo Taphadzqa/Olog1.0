@@ -1,0 +1,69 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row pt-lg-3">
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center justify-content-between mb-1">
+            <div class="col-4 col-sm-auto d-flex align-items-center pr-0">
+              <h6 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Completed Loads</h6>
+            </div>
+          </div>
+          {% if loads == []: %}
+          <div class="row align-items-center justify-content-between">
+            <div class="mt-5">
+              <p class="lead text-center"> No loads available.</p>
+            </div>
+          </div>
+        </div>
+        {% else: %}
+      </div>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <th>Pickup</th>
+              <th>Drop</th>
+              <th>Driver</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for load in loads %}
+            <tr>
+              <td>{{ load.ol_num }}</td>
+              <td>
+                {{ load.loading_address }} {{ load.loading_city }} <br>
+                <small> <strong>{{ load.load_date.strftime("%a %d %b") }}</strong> </small>
+              </td>
+              <td>
+                {{ load.offloading_address }} {{ load.offloading_city }} <br>
+                <small> <strong>{{ load.offload_date.strftime("%a %d %b") }}</strong> </small>
+              </td>
+              <td>
+                {% if load.driver_name == "" or load.vehicle_registration == "": %}
+                <span>Not Assigned</span>
+                {% else: %}
+                {{ load.driver_name }} <br>
+                <small> <strong>
+                    {% if load.driver_id != "": %} {{ load.driver_id }} | {% else: %} No ID | {% endif %}
+                    {% if load.driver_cellnumber != "": %} {{ load.driver_cellnumber }} | {% else: %} No Cell | {% endif %}
+                    {{ load.vehicle_registration }}
+                  </strong> </small>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center my-3"></div>
+      {% endif %}
+
+    </div>
+  </div>
+
+</section>
+{% endblock content %}

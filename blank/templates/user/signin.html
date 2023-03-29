@@ -1,0 +1,56 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row pt-lg-5">
+      <div class="col-lg-6 mt-5">
+        <div class="card card-sm">
+          <div class="card-body">
+            <h6 class="card-title">Sign in</h6>
+            <p class="card-text">Hello there! Sign in and start managing your account.</p>
+            <form action="" method="post">
+              {{ form.hidden_tag() }}
+              <!-- Email form start-->
+              <div class="form-floating mb-3">
+                {% if form.email.errors %}
+                  {{ form.email(class="form-control is-invalid", id="email", type="email", placeholder="Email") }}
+                  <div class="input-feedback">{% for error in form.email.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                {% else %}
+                  {{ form.email(class="form-control", id="email", type="email", placeholder="Email") }}
+                {% endif %}
+                <label for="email">Email</label>
+              </div>
+              <!-- Email form end-->
+
+              <!-- Password form start-->
+              <div class="form-floating mb-3">
+                {% if form.password.errors %}
+                  {{ form.password(class="form-control is-invalid", id="password", type="password", placeholder="Password") }}
+                  <div class="input-feedback">{% for error in form.password.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                {% else %}
+                  {{ form.password(class="form-control", id="password", type="password", placeholder="Password") }}
+                {% endif %}
+                <label for="password">Password</label>
+              </div>
+              <!-- Password form end-->
+
+              <!-- Remember me start -->
+              <div class="mb-3"><span class="checkbox">
+                {{ form.remember(id="remember_me") }} {{ form.remember.label(for="remember_me") }}
+              </span></div>
+              <!-- Remember me end -->
+
+              <!-- Submit button start -->
+              {{ form.submit(class="btn btn-dark") }}
+              <!-- Submit button end -->
+            </form>
+            <div class="mt-3 text-center">
+              <a class="btn" href="{{ url_for('user.reset_request') }}">Forgot your password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

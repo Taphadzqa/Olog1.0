@@ -1,0 +1,248 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row pt-lg-3">
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center justify-content-between mb-1">
+            <div class="col-4 col-sm-auto d-flex align-items-center pr-0">
+              <h6 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Active Loads</h6>
+            </div>
+          </div>
+          {% if loads == []: %}
+          <div class="row align-items-center justify-content-between">
+            <div class="mt-5">
+              <p class="lead text-center"> No loads available.</p>
+            </div>
+          </div>
+        </div>
+        {% else: %}
+      </div>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <th>Pickup</th>
+              <th>Drop</th>
+              <th>Order Number</th>
+              <th>Driver</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for load in loads %}
+            <tr>
+              <td>{{ load.ol_num }}</td>
+              <td>
+                {{ load.loading_address }} {{ load.loading_city }} <br>
+                <small> <strong>{{ load.load_date.strftime("%a %d %b") }}</strong> </small>
+              </td>
+              <td>
+                {{ load.offloading_address }} {{ load.offloading_city }} <br>
+                <small> <strong>{{ load.offload_date.strftime("%a %d %b") }}</strong> </small>
+              </td>
+              <td> {% if load.sap_number != "": %} {{ load.sap_number }} {% else: %} <strong>Waiting for order number</strong> {% endif %} </td>
+              <td>
+                {% if load.driver_name == "" or load.vehicle_registration == "": %}
+                <span>Not Assigned</span>
+                {% else: %}
+                {{ load.driver_name }} <br>
+                <small> <strong>
+                    {% if load.driver_id != "": %} {{ load.driver_id }} | {% else: %} No ID | {% endif %}
+                    {% if load.driver_cellnumber != "": %} {{ load.driver_cellnumber }} | {% else: %} No Cell | {% endif %}
+                    {{ load.vehicle_registration }}
+                  </strong> </small>
+                {% endif %}
+              </td>
+              <td>
+                <a class="btn btn-sm orange" data-bs-toggle="modal" href="#loadsModal" role="button" aria-controls="loadsModal" data-bs-LoadId="{{load.id}}" data-bs-LoadPick="{{load.loading_city}}" data-bs-LoadPickDate="{{load.load_date}}"
+                  data-bs-LoadDrop="{{load.offloading_city}}" data-bs-LoadDropDate="{{load.offload_date}}" data-bs-LoadDriver="{{load.driver_name}}" data-bs-LoadDriverID="{{load.driver_id}}" data-bs-LoadDriverCell="{{load.driver_cellnumber}}"
+                  data-bs-LoadReg="{{load.vehicle_registration}}" data-bs-LoadKnackId="{{load.load_id_knack}}" data-bs-LoadSAP="{{load.sap_number}}">
+                  Manage
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center my-3"></div>
+      {% endif %}
+
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="loadsModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="loadsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loadsModalLabel">Load Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="accordion" id="accordionLoads">
+            <!-- Generate load con form -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Generate load confirmation
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#headingOne">
+                <div class="accordion-body">
+                  <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
+                    <div class="list-group list-group-flush border-bottom scrollarea">
+                      <a href="#" class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <strong class="mb-1">Pickup:</strong>
+                        </div>
+                        <div class="col-10 mb-1 small" id="loadPick"></div>
+                        <div class="col-10 mb-1 small" id="loadPickDate"></div>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <strong class="mb-1">Drop:</strong>
+                        </div>
+                        <div class="col-10 mb-1 small" id="loadDrop"></div>
+                        <div class="col-10 mb-1 small" id="loadDropDate"></div>
+                      </a>
+                      <span href="#" class="list-group-item py-3 lh-tight" aria-current="true">
+                        <span id="formAssignMessage"></span>
+                        <form id="formAssign" action="" method="post">
+                          {{ form.hidden_tag() }}
+
+                          <!-- Name form start-->
+                          <div class="form-floating mb-3">
+                            {% if form.driver.errors %}
+                            {{ form.driver(class="form-control is-invalid", id="assignDriver", placeholder="Driver's name") }}
+                            <div class="input-feedback">{% for error in form.driver.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                            {% else %}
+                            {{ form.driver(class="form-control", id="assignDriver", placeholder="Driver's name") }}
+                            {% endif %}
+                            <label for="driver">Driver's name</label>
+                          </div>
+                          <!-- Name form end-->
+
+                          <!-- Cell form start-->
+                          <div class="form-floating mb-3">
+                            {% if form.cell.errors %}
+                            {{ form.cell(class="form-control is-invalid", id="assignCell", placeholder="Driver's cell") }}
+                            <div class="input-feedback">{% for error in form.cell.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                            {% else %}
+                            {{ form.cell(class="form-control", id="assignCell", placeholder="Driver's cell") }}
+                            {% endif %}
+                            <label for="cell">Driver's cell</label>
+                          </div>
+                          <!-- Cell form end-->
+
+                          <!-- ID form start-->
+                          <div class="form-floating mb-3">
+                            {% if form.id.errors %}
+                            {{ form.id(class="form-control is-invalid", id="assignID", placeholder="Driver's ID") }}
+                            <div class="input-feedback">{% for error in form.id.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                            {% else %}
+                            {{ form.id(class="form-control", id="assignID", placeholder="Driver's ID") }}
+                            {% endif %}
+                            <label for="id">Driver's ID</label>
+                          </div>
+                          <!-- ID form end-->
+
+                          <!-- Vehicle Reg form start-->
+                          <div class="form-floating mb-3">
+                            {% if form.reg.errors %}
+                            {{ form.reg(class="form-control is-invalid", id="assignReg", placeholder="Vehicle registration") }}
+                            <div class="input-feedback">{% for error in form.reg.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                            {% else %}
+                            {{ form.reg(class="form-control", id="assignReg", placeholder="Vehicle registration") }}
+                            {% endif %}
+                            <label for="reg">Vehicle registration</label>
+                          </div>
+                          <!-- Vehicle Reg form end-->
+
+                          <!-- Submit button start -->
+                          {{ form.submit(class="btn btn-dark") }}
+                          <!-- Submit button end -->
+
+                          {{ form.load_id(class="form-control hiddenElement", id="loadId") }}
+
+                        </form>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Load feedback form -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Update on load status
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#headingTwo">
+                <div class="accordion-body">
+                  <form action="" method="post">
+                    {{ updateform.hidden_tag() }}
+
+                    <!-- ETA form start-->
+                    <div class="form-floating mb-3">
+                      {% if updateform.eta.errors %}
+                      {{ updateform.eta(class="form-control is-invalid", id="eta", type="time", placeholder="ETA") }}
+                      <div class="input-feedback">{% for error in updateform.eta.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                      {% else %}
+                      {{ updateform.eta(class="form-control", id="eta", type="time", placeholder="ETA") }}
+                      {% endif %}
+                      <label for="eta">ETA</label>
+                    </div>
+                    <!-- ETA form end-->
+
+                    <!-- Status form start-->
+                    <div class="form-floating mb-3">
+                      {% if updateform.status.errors %}
+                      {{ updateform.status(class="form-control is-invalid", id="status", placeholder="Status") }}
+                      <div class="input-feedback">{% for error in updateform.status.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                      {% else %}
+                      {{ updateform.status(class="form-control", id="status", placeholder="Status") }}
+                      {% endif %}
+                      <label for="status">Status</label>
+                    </div>
+                    <!-- Status form end-->
+
+                    <!-- Comments form start-->
+                    <div class="form-floating mb-3">
+                      {% if updateform.comments.errors %}
+                      {{ updateform.comments(class="form-control is-invalid", id="comments", placeholder="Comments", style="height: 100px") }}
+                      <div class="input-feedback">{% for error in updateform.comments.errors %}<span>{{ error }}</span>{% endfor %}</div>
+                      {% else %}
+                      {{ updateform.comments(class="form-control", id="comments", placeholder="Comments", style="height: 100px") }}
+                      {% endif %}
+                      <label for="comments">Comments</label>
+                    </div>
+                    <!-- Comments form end-->
+
+                    <!-- Submit button start -->
+                    {{ updateform.submit(class="btn btn-dark") }}
+                    <!-- Submit button end -->
+
+                    {{ updateform.load_id(class="form-control hiddenElement", id="updateloadId") }}
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endblock content %}

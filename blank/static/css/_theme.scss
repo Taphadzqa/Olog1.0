@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* Fonts */
+$Montserrat: 'Montserrat', sans-serif;
+$DancingScript: 'Dancing Script', cursive;
+
+/* Light | Colors */
+$background: #E6E9ED;
+$backgroundOverlay: #F5F7FA;
+$primary: #434A54; // darkGrey
+$secondary: #F5F7FA; // white
+
+$buttonText: #434A54;
+$orange: #FDAE0C;
+$orangeDarker: #df990a;
+$grey: #CCD1D9;
+$greyDarker: #AAB2BD;
+$red: #ED5565;
+$redDarker: #DA4453;
+$green: #48CFAD;
+$greenDarker: #37BC9B;
+$blue: #4FC1E9;
+$blueDarker: #3BAFDA;
+$dark: #434A54;
+$light: #F5F7FA;
+
+*{
+  &.green{
+    background-color: $green;
+  }
+  &.red{
+    background-color: $red;
+  }
+  &.blue{
+    background-color: $blue;
+  }
+  &.orange{
+    background-color: $orange;
+  }
+  &.grey{
+    background-color: $grey;
+    color: #333;
+  }
+  &.dark{
+    background-color: $dark;
+    color: $light !important;
+  }
+  &.light{
+    background-color: $light;
+  }
+  &.textRed{
+    color: $red;
+  }
+  &.textGreen{
+    color: $green;
+  }
+  &.textOrange{
+    color: $orange;
+  }
+  &.textDark{
+    color: #333;
+  }
+  &.bold{
+    font-weight: 600;
+  }
+}
+
+a.link{
+  color: inherit;
+  border-bottom: 2px dotted $orange;
+  transition: color .5s, border, 85s ease-in-out;
+}
+
+.text-center{
+  text-align: center;
+}

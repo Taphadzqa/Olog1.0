@@ -1,0 +1,76 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row align-items-center pt-lg-5">
+      <!-- One -->
+      <div class="col-lg-7 mt-5">
+        <div class="hero-text">
+          <h1 class="display-2">Southern Africa's Premier Digital Freight Exchange</h1>
+          <p class="lead ">A custom built, easy to use digital booking platform that connects suppliers via leading industry technology to transporters  for full end to end supply chain execution.</p>
+          <a href="#" class="btn btn-lg btn-warning">Learn more</a>
+        </div>
+      </div>
+      <!-- Two -->
+      <div class="d-none d-md-block col-md-8 offset-md-2 offset-lg-0 col-lg-6 mt-lg-5 logoIllustration">
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="grey py-5">
+  <div class="container">
+    <div class="row">
+      <!-- One -->
+      <div class="d-none d-lg-block col-lg-6 logoIllustration pt-5">
+        <img src="{{ url_for('static', filename='css/img/digital.svg') }}" alt="">
+      </div>
+      <!-- Two -->
+      <div class="col-lg-6">
+        <h1 id="about" class="display-1">About Us</h1>
+        <h3 class="display-6">Olog</h3>
+        <p class="lead">
+          Welcome to <strong>OLOG</strong>, your number one digital freight echange platform. We're dedicated to providing you the very best digital logistics experience, with an emphasis on simplicity, efficiency and something else.
+          We are lead by well respected Logistics entrepreneurs with over 30 years experience in innovation and substantial supply chain value creation for dozens of Blue Chip companies over the years.
+        </p>
+        <p class="lead">We hope you enjoy our services as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to <a class="link" href="#">contact us</a>.</p>
+        <p class="lead">Sincerely,<br><strong>Rory Atkinson </strong>[Managing Director: Operations]</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-sm py-5">
+  <div class="container bg-dark">
+    <h1 class="display-1">Contact Us</h1>
+    <div class="row">
+      <!-- One -->
+      <div class="col-lg-6">
+        <p class="display-6">Email support</p>
+        <p class="lead">Please email all system related enquiries to: <br> <strong class="textOrange">tafa@orangelogistics.co.za</strong></p>
+        <p class="display-6">Phone support</p>
+        <p class="lead">Call to speak to a service rep.: <br> <strong class="textOrange">+27 65 884 6945</strong></p>
+        <p class="display-6">More contact information</p>
+        <p class="lead">Visit the Orange Logistics page for further assistance: <br> <a href="http://www.orangelogistics.co.za/contact/" target="_blank"><strong class="textOrange">Orange Logistics</strong></a> </p>
+      </div>
+      <!-- Two -->
+      <div class="col-lg-6">
+        <p class="display-6">What can we do for you?</p>
+        <p>Fill in the form below and we will respond to your request.</p>
+        <form action="{{ url_for('main.home') }}" method="post" class="textDark mb-5">
+          <div class="form-floating mb-3">
+            <input id="subject" type="text" class="form-control" placeholder="Subject">
+            <label for="subject">Subject</label>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea id="message" class="form-control" style="height:100px;" placeholder="Message"></textarea>
+            <label for="message">Message</label>
+          </div>
+          <div class="form-floating mb-3">
+            <button type="submit" class="btn orange">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
